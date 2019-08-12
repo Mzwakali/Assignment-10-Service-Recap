@@ -1,5 +1,8 @@
 package ac.za.mzwakali.domain.user;
 
+import ac.za.mzwakali.domain.demography.Gender;
+import ac.za.mzwakali.domain.demography.Race;
+
 import java.util.Objects;
 
 public class Employee {
@@ -7,6 +10,8 @@ public class Employee {
     private int empNum;
     private String firstName;
     private String lastName;
+    /*private Gender gender;
+    private Race race;*/
 
     public Employee() {
     }

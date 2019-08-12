@@ -12,6 +12,14 @@ public class Race {
         this.raceDesc = builder.raceDesc;
     }
 
+    public void setRaceId(int raceId) {
+        this.raceId = raceId;
+    }
+
+    public void setRaceDesc(String raceDesc) {
+        this.raceDesc = raceDesc;
+    }
+
     public int getRaceId() {
         return raceId;
     }

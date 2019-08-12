@@ -37,6 +37,7 @@ public class EmployeeServiceImplTest {
 
     @Test
     public void read() {
+        employeeService.create(employee);
         assertNotNull(employeeService.read(1));
         System.out.println("Read:\n" +employeeService.read(1));
     }
@@ -46,11 +47,18 @@ public class EmployeeServiceImplTest {
         employeeService.create(employee);
         System.out.println(employeeService.read(1));
 
-        Employee employeeUpdate = EmployeeFactory.buildEmployee(2,"Senzo","Meyiwa");
+        Employee employeeUpdate = EmployeeFactory.buildEmployee(1,"Senzo","Meyiwa");
+        employeeService.update(employeeUpdate);
+        Employee employee1 = employeeService.read(1);
+        assertNotEquals(employee.getLastName(), employee1.getLastName());
+        System.out.println("Updated:\n" +employeeService.read(1));
 
     }
 
     @Test
     public void delete() {
+        employeeService.delete(1);
+        assertNull(employeeService.read(employee.getEmpNum()));
+        System.out.println("Deleted:\n"+employee.getEmpNum());
     }
 }
